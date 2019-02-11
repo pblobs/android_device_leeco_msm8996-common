@@ -23,9 +23,6 @@ def FullOTA_Assertions(info):
   return
 
 def FullOTA_InstallBegin(info):
-  info.script.Mount("/system")
-  UnlockVendorPartition(info)
-  info.script.Unmount("/system")
   AddVendorAssertion(info)
   return
 
@@ -56,7 +53,7 @@ def IncrementalOTA_InstallEnd(info):
 
 def AddVendorAssertion(info):
   cmd = 'assert(leeco.file_exists("/dev/block/bootdevice/by-name/vendor") == "1" || \
-abort("Error: Vendor partition doesn\'t exist! Please reboot to recovery and flash again!"););'
+abort("Error: Vendor partition doesn\'t exist! Please treblize your phone first!"););'
   info.script.AppendExtra(cmd)
   return
 
@@ -70,17 +67,6 @@ def AddModemAssertion(info):
   return
 
 def RunCustomScript(info, name, arg):
-  info.script.AppendExtra(('run_program("/tmp/install/bin/%s", "%s");' % (name, arg)))
+  info.script.AppendExtra(('run_program("/vendor/bin/%s", "%s");' % (name, arg)))
   return
 
-def UnlockVendorPartition(info):
-  info.script.AppendExtra('package_extract_file("install/bin/toybox", "/tmp/toybox");');
-  info.script.AppendExtra('package_extract_file("install/bin/sgdisk", "/tmp/sgdisk");');
-  info.script.AppendExtra('package_extract_file("install/bin/unlock-vendor.sh", "/tmp/unlock-vendor.sh");');
-  info.script.AppendExtra('set_metadata("/tmp/toybox", "uid", 0, "gid", 0, "mode", 0755);');
-  info.script.AppendExtra('set_metadata("/tmp/sgdisk", "uid", 0, "gid", 0, "mode", 0755);');
-  info.script.AppendExtra('set_metadata("/tmp/unlock-vendor.sh", "uid", 0, "gid", 0, "mode", 0755);');
-  info.script.AppendExtra('ui_print("Checking for vendor partition...");');
-  info.script.AppendExtra('if run_program("/tmp/unlock-vendor.sh") != 0 then');
-  info.script.AppendExtra('abort("Unlocking vendor partition failed.");');
-  info.script.AppendExtra('endif;');
