@@ -350,7 +350,7 @@ PRODUCT_COPY_FILES += \
 
 # USB
 PRODUCT_PACKAGES += \
-    android.hardware.usb@1.0-service.basic \
+    android.hardware.usb@1.0-service.leeco_msm8996 \
     com.android.future.usb.accessory
 
 # Vendor properties
