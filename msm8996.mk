@@ -138,6 +138,11 @@ PRODUCT_PACKAGES += \
     camera.msm8996 \
     Snap
 
+# Charger
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/charger/charger:$(TARGET_COPY_OUT_VENDOR)/bin/charger \
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/charger/images,root/res/images)
+
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
     libcnefeatureconfig
