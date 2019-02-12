@@ -43,3 +43,6 @@
 /sys/devices/platform/kcal_ctrl.0(/.*)?			u:object_r:kcal_dev:s0
 /sys/bus/platform/drivers/kcal_ctrl(/.*)?		u:object_r:kcal_dev:s0
 /cache/org\.omnirom\.device\.dex       u:object_r:dalvikcache_data_file:s0
+
+# Camera focus fix parameter
+/sys/module/msm_actuator/parameters/use_focus_fix      u:object_r:sysfs_focus_param:s0
