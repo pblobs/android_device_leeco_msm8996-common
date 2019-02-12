@@ -18,6 +18,11 @@ on boot
     chmod 666 /dev/remote/name
     chmod 666 /sys/remote/enable
     chmod 666 /dev/ttyHSL1
+    # sys
+    chown system system /sys/kernel/tracing/tracing_on
+    chown system system /sys/block/sda/queue/iosched/slice_idle
+    chmod 0660 /sys/kernel/tracing/tracing_on
+    chmod 0660 /sys/block/sda/queue/iosched/slice_idle
 
 # AutoFocus fix
 on property:persist.camera.focus_fix=1
