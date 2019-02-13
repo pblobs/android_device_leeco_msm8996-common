@@ -1,0 +1,2 @@
+allow time_daemon self:capability sys_admin;
+allow time_daemon sysfs:file { open read};

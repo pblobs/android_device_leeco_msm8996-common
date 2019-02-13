@@ -42,3 +42,6 @@ genfscon proc /touchpanel                                               u:object
 
 # debugfs
 genfscon debugfs /ufshcd0                  u:object_r:debugfs_ufs:s0
+
+# Boot Reason
+genfscon proc /sys/kernel/boot_reason                                   u:object_r:proc_kernel_boot_reason:s0
