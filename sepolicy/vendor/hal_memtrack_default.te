@@ -1,3 +1,2 @@
-#neverallow
-#allow hal_memtrack_default debugfs:file read;
-
+# Fixme
+dontaudit hal_memtrack_default debugfs:file { read open };

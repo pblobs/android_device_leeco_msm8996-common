@@ -7,3 +7,4 @@ type sysfs_ir_enable, fs_type, sysfs_type;
 type consumer_ir_device, dev_type;
 type kcal_dev, fs_type, sysfs_type;
 type sysfs_focus_param, fs_type, sysfs_type;
+type proc_kernel_boot_reason, fs_type, proc_type;

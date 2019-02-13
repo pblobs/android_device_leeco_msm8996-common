@@ -1,2 +1,4 @@
 typeattribute mm-qcamerad binder_in_vendor_violators;
 binder_use(mm-qcamerad);
+allow mm-qcamerad sysfs:file { read open };
+allow mm-qcamerad sysfs_graphics:file { read open };

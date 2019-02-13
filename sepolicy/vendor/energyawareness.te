@@ -1,1 +1,2 @@
 r_dir_file(energyawareness, sysfs)
+allow energyawareness self:capability sys_admin;

@@ -5,3 +5,21 @@ allow init servicemanager:binder { call };
 allow init sysfs_leds:lnk_file { r_file_perms };
 
 allow init consumer_ir_device:file relabelto;
+
+# Allow init to mount vendor configs
+allow init vendor_configs_file:file mounton;
+allow init vendor_overlay_file:file mounton;
+
+allow init sysfs:file create;
+
+allow init debugfs:dir mounton;
+
+allow init system_file:system module_load;
+allow init vendor_file:file mounton;
+
+allow init rootfs:lnk_file setattr;
+
+allow init proc_kernel_boot_reason:file { read getattr };
+
+#FIXME
+dontaudit init sysfs:file { write setattr };

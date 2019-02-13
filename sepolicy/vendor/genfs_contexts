@@ -24,3 +24,6 @@ genfscon sysfs /devices/soc/6a00000.ssusb/6a00000.dwc3/gadget/lun0/     u:object
 
 # Touchpanel
 genfscon proc /touchpanel                                               u:object_r:proc_touchpanel:s0
+
+# Boot Reason
+genfscon proc /sys/kernel/boot_reason                                   u:object_r:proc_kernel_boot_reason:s0

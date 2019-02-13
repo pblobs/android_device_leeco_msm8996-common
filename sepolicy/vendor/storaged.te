@@ -1,2 +1,1 @@
-#neverallow
 #allow storaged sysfs:file read;
