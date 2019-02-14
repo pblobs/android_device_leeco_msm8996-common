@@ -132,10 +132,6 @@ BOARD_USES_QCNE := true
 # Crypto
 TARGET_HW_DISK_ENCRYPTION := true
 
-# Dexpreopt
-WITH_DEXPREOPT := true
-DONT_DEXPREOPT_PREBUILTS := true
-
 # Display
 BOARD_USES_ADRENO := true
 
