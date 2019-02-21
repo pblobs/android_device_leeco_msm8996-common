@@ -5,6 +5,10 @@ allow system_app kcal_dev:dir search;
 
 allow system_app sysfs_batteryinfo:dir search;
 
+# Focus Fix for x2 
+allow system_app camera_prop:file read;
+allow system_app camera_prop:property_service set;
 allow system_app sysfs_focus_param:file { r_file_perms w_file_perms };
+
 #FIXME
 dontaudit system_app vendor_file:file { read open };
